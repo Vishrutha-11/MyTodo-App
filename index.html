@@ -12,30 +12,22 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            body: ['"DM Sans"', 'sans-serif'],
-            heading: ['"DM Serif Display"', 'serif'],
-          },
+ <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          body: ['"DM Sans"', 'sans-serif'],
+          heading: ['"DM Serif Display"', 'serif'],
         },
-      },
-    }
-  </script>
-
-  <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      boxShadow: {
-        card: '0 4px 6px -1px rgba(0,0,0,0.05), 0 10px 15px -3px rgba(0,0,0,0.02), 0 20px 25px -5px rgba(0,0,0,0.05),0 10px 15px -3px rgba(0,0,0,0.02)'
+        boxShadow: {
+          card: '0 4px 6px -1px rgba(0,0,0,0.05), 0 10px 15px -3px rgba(0,0,0,0.02), 0 20px 25px -5px rgba(0,0,0,0.05),0 10px 15px -3px rgba(0,0,0,0.02)'
+        }
       }
     }
   }
-}
 </script>
+
 
 </head>
 
@@ -47,7 +39,12 @@ tailwind.config = {
  <div class="mx-auto mt-10 h-[750px] w-[750px] bg-white rounded-xl shadow-card">
 
 
+<div class="w-full flex justify-between p-6">
 
+  <input class="w-[610px] flex gap-2  h-12 rounded-lg  text-base leading-none
+         placeholder:text-base  px-6 border border-xs bg-gray-100 placeholder:text-gray hover:border-red-300 outline-none" type="text" placeholder="What needs to be done?">
+  <button class="bg-cyan-500 w-16 h-12  text-white rounded-lg border hover:border-xs hover:border-red-500 ">Add</button>
+</div>
 
   </div>
 </body>
