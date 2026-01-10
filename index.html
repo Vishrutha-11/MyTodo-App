@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap"
+    rel="stylesheet"
+  />
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            body: ['"DM Sans"', 'sans-serif'],
+            heading: ['"DM Serif Display"', 'serif'],
+          },
+        },
+      },
+    }
+  </script>
 </head>
-<body>
-    
+
+<body class="font-body">
+  <h1 class="font-heading flex h-16 items-center justify-center bg-cyan-700 text-xl font-bold tracking-wide text-white">
+    My Todo List
+  </h1>
 </body>
 </html>
