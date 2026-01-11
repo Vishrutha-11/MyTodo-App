@@ -31,63 +31,74 @@
 
 </head>
 
-<body class="font-body ">
-  <h1 class="font-heading flex h-16 items-center justify-center bg-cyan-700 text-xl font-bold tracking-wide text-white">
+<body class="font-body bg-[#f5f5f4]">
+  <h1 class="font-heading flex h-20 items-center justify-center bg-teal-700 text-2xl font-bold tracking-wide text-white">
     My Todo List
   </h1>
 
- <div class="mx-auto mt-10 h-[550px] w-[550px] bg-white rounded-xl shadow-card">
+ <div class="mx-auto mt-10 mb-10 h-[550px] w-[550px] bg-white rounded-xl overflow-hidden shadow-card">
 
 
 <div class="w-full flex justify-between p-6 ">
-  <input class="w-[420px] flex gap-2  h-12 rounded-lg  text-base leading-none
-         placeholder:text-base  px-6 border border-xs bg-gray-100 placeholder:text-gray hover:border-red-300 outline-none" type="text" placeholder="What needs to be done?">
-  <button class="bg-cyan-500 w-16 h-12  text-white rounded-lg border hover:border-xs hover:border-red-500 ">Add</button>
+<input
+  type="text"
+  placeholder="What needs to be done?"
+  class="w-[420px] h-12 rounded-lg px-6 bg-[#fafaf9] border border-[#e7e5e4]
+         outline-none
+         shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.04)]
+         focus:shadow-[0_0_0_3px_rgba(20,184,166,0.15)]
+         transition placeholder:text-[#a8a29e]"
+/>
+
+
+  <button class="bg-teal-500 w-16 h-12  text-white rounded-lg border hover:border-xs hover:border-red-500 ">Add</button>
 </div>
 
-<div class="border border-gray-200 ">
+<div class="border border-[#e7e5e4] ">
 </div>
 
 
 <div class="flex justify-between p-4">
 
 <div class=" flex gap-2 items-center">
-<input class=" w-3 h-3 border-2 border-red-400 accent-gray-600 cursor-pointer" type="checkbox">
+<input class=" w-4 h-4 border-2 border-[#14b8a6] accent-teal-500 cursor-pointer" type="checkbox">
 <span>Learn html bascics</span>
 </div>
 <input class= "rounded-full w-4 h-4 border-0 outline-none  p-0 appearance-none" type="color"> 
 </div>
 
- <div class="border border-gray-200">
+ <div class="border border-[#e7e5e4]">
 </div>
 
 
-<div class="flex justify-between mt-64
-    border-t-2 border-gray-300 items-center p-6 bg-gray-100 text-sm ">
+<div class="flex justify-between mt-72
+    border-t-2 border-[#e7e5e4] items-center p-3 bg-[#fafaf9] text-sm ">
 
 
-<div class="text-gray-500 text-xs">
+<div class="text-[#a8a29e] text-xs">
     <span class="text-teal-500 font-bold">3</span> items left</div>
-
-<div class="inline-flex rounded-lg border border-gray-200 bg-white p-1 shadow-sm">
+<div class="inline-flex rounded-lg border-2 border-[#e7e5e4] bg-white p-1 shadow-sm">
   <button
     class="rounded-md bg-teal-500 px-4 py-2 text-xs font-medium text-white">
     All
   </button>
-  <button class="rounded-md px-3 py-2 text-xs font-medium text-gray-400 hover:text-gray-600">
+  <button class="rounded-md px-3 py-2 text-xs font-medium text-[#a8a29e] hover:text-gray-600">
     Active
   </button>
   <button
-    class="rounded-md px-3 py-2 text-xs font-medium text-gray-400 hover:text-gray-600">
+    class="rounded-md px-3 py-2 text-xs font-medium text-[#a8a29e] hover:text-gray-600">
     Completed
   </button>
 </div>
-<div class="text-gray-500 text-xs">Clear completed</div>
+<div class="text-[#a8a29e] text-xs">Clear completed</div>
 </div>
 
-
+<div class="border border-t-2 border-[#e7e5e4] flex bg-[#fafaf9] justify-center items-center text-xs p-3 font-lighter text-[#a8a29e]">
+FILTER BY TAG:
 </div>
-
+</div>
+<div class="text-xs text-[#a8a29e] flex justify-center items-center mt-6 tracking-wide "> Press  <span class="border-2 rounded-md border-[#e7e5e4] bg-white px-1 "> Enter </span> to add a todo
+</div>
 
   </div>
 </body>
