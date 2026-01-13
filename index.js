@@ -42,9 +42,12 @@ checkbox.className = "w-5 h-5 accent-teal-500 cursor-pointer ";
 
 const deleteBtn = document.createElement("button");
 deleteBtn.className =
-  "opacity-0 group-hover:opacity-100 transition-opacity duration-200 p-2";
+  " p-2";
+deleteBtn.textContent="delete";
 
-
+deleteBtn.addEventListener("click", () => {
+  li.remove();
+});
 
 
 label.appendChild(checkbox)
