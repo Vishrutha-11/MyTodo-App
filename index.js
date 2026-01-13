@@ -11,12 +11,14 @@ btn.addEventListener('click',()=>{
     const item=input.value;
     addTodo(item);
     input.value="";
+    updateItemsLeft()
 })
 
 
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     addTodo();
+    updateItemsLeft();
   }
 });
 
@@ -75,8 +77,8 @@ customBox.appendChild(checkIcon);
     checkIcon.classList.add("hidden"); // hide tick
     span.classList.remove("line-through", "text-yellow-700");
   }
+  updateItemsLeft()
 });
-
 
 
   // delete button
@@ -90,7 +92,9 @@ customBox.appendChild(checkIcon);
       <path d="M6 2a1 1 0 00-1 1v1H3v2h14V4h-2V3a1 1 0 00-1-1H6zM5 6v11a2 2 0 002 2h6a2 2 0 002-2V6H5z"/>
     </svg>
   `;
-  deleteBtn.onclick = () => li.remove();
+  deleteBtn.onclick = () => {
+    li.remove();
+  updateItemsLeft()}
 
   // append
   label.appendChild(checkbox);
@@ -120,4 +124,26 @@ clearCompleted.addEventListener("click", () => {
       todoItem.remove();
     }
   });
+  updateItemsLeft()
 });
+
+  updateItemsLeft();
+function updateItemsLeft() {
+  const itemsLeftEl = document.getElementById('items-left');
+  if (!itemsLeftEl) return;
+
+  // Select all todo items (li)
+  const allTodos = document.querySelectorAll('#todo-list li');
+  let remaining = 0;
+
+  allTodos.forEach(todoItem => {
+    const checkbox = todoItem.querySelector("input[type='checkbox']");
+    if (checkbox && !checkbox.checked) {
+      remaining++;
+    }
+  });
+
+  itemsLeftEl.textContent = remaining + ' item' +  (remaining !== 1 ? 's' : '') +' left ';
+}
+
+
