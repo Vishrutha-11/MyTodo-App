@@ -70,6 +70,11 @@ customBox.appendChild(checkIcon);
   span.textContent = text;
   span.className = "text-gray-900 transition-all";
 
+  const colorDot = document.createElement("span");
+colorDot.className =
+  `absolute right-10 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full ${selectedColor}`;
+
+
   // ✅ HANDLE CHECK LOGIC WITH JS (IMPORTANT)
  checkbox.addEventListener("change", () => {
   if (checkbox.checked) {
@@ -111,6 +116,7 @@ applyStatusFilter()
   label.appendChild(span);
 
   li.appendChild(label);
+  li.appendChild(colorDot); 
   li.appendChild(deleteBtn);
   todoList.appendChild(li);
 
@@ -198,3 +204,17 @@ function applyStatusFilter() {
     }
   });
 }
+
+
+let selectedColor="bg-green-500"
+
+document.querySelectorAll(".tag").forEach(tag => {
+  tag.addEventListener("click", () => {
+    selectedColor = tag.dataset.color;
+
+    // optional: show selected ring
+    document.querySelectorAll(".tag")
+      .forEach(t => t.classList.remove("ring-2", "ring-teal-500"));
+    tag.classList.add("ring-2", "ring-teal-500");
+  });
+});
