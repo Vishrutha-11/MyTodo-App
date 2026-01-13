@@ -143,7 +143,10 @@ function updateItemsLeft() {
     }
   });
 
-  itemsLeftEl.textContent = remaining + ' item' +  (remaining !== 1 ? 's' : '') +' left ';
+  itemsLeftEl.innerHTML = `
+    <span class="text-teal-500 font-bold">${remaining}</span>
+    <span class="text-[#a8a29e] ml-1">item${remaining !== 1 ? 's' : ''}  </span> <span class="text-[#a8a29e] ml-1">left</span>
+  `;
 }
 
 
