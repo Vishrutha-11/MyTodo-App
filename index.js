@@ -7,11 +7,14 @@ console.log("dujk",btn)
 const todoList=document.getElementById('todo-list')
 console.log("yucgh",todoList)
 
+
+let currentFilter="all"
 btn.addEventListener('click',()=>{
     const item=input.value;
     addTodo(item);
     input.value="";
     updateItemsLeft()
+
 })
 
 
@@ -19,6 +22,7 @@ input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     addTodo();
     updateItemsLeft();
+   
   }
 });
 
@@ -29,16 +33,16 @@ function addTodo() {
 
   const li = document.createElement("li");
   li.className =
-    "flex justify-between items-center w-[500px] border-b group";
+    "flex relative justify-between items-center w-[500px] border-b group";
 
   // label
   const label = document.createElement("label");
-  label.className = "flex items-center gap-4 px-4 py-3 cursor-pointer";
+  label.className = "flex items-center gap-4 px-4 py-3 cursor-pointer w-full";
 
   // checkbox (hidden)
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
-  checkbox.className = "hidden";
+  checkbox.className = "hidden checkbox peer";
 
   const customBox = document.createElement("span");
 customBox.className =
@@ -79,12 +83,15 @@ customBox.appendChild(checkIcon);
   }
   updateItemsLeft()
 });
+applyStatusFilter()
 
 
   // delete button
   const deleteBtn = document.createElement("button");
-  deleteBtn.className =
-    "opacity-0 group-hover:opacity-100 transition-opacity p-2";
+ deleteBtn.className =
+  "absolute right-2 top-1/2 -translate-y-1/2 " +
+  "opacity-0 group-hover:opacity-100 transition-opacity p-2";
+
   deleteBtn.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg"
       class="w-5 h-5 text-red-400 hover:text-red-500"
@@ -94,7 +101,9 @@ customBox.appendChild(checkIcon);
   `;
   deleteBtn.onclick = () => {
     li.remove();
-  updateItemsLeft()}
+  updateItemsLeft()
+  }
+  applyStatusFilter()
 
   // append
   label.appendChild(checkbox);
@@ -106,6 +115,7 @@ customBox.appendChild(checkIcon);
   todoList.appendChild(li);
 
   input.value = "";
+ applyStatusFilter()
 }
 
 
@@ -125,6 +135,7 @@ clearCompleted.addEventListener("click", () => {
     }
   });
   updateItemsLeft()
+
 });
 
   updateItemsLeft();
@@ -149,4 +160,41 @@ function updateItemsLeft() {
   `;
 }
 
+const filterstatus = document.querySelectorAll(".filter-btn");
 
+filterstatus.forEach(btn => {
+  btn.addEventListener("click", () => {
+    currentFilter = btn.dataset.filter;
+
+    // reset styles
+    filterstatus.forEach(b => {
+      b.classList.remove("bg-teal-500", "text-white", "font-medium");
+      b.classList.add("text-[#a8a29e]");
+    });
+
+    // active style
+    btn.classList.add("bg-teal-500", "text-white", "font-medium");
+    btn.classList.remove("text-[#a8a29e]");
+
+    applyStatusFilter();
+  });
+});
+
+
+
+function applyStatusFilter() {
+  const allTodos = document.querySelectorAll('#todo-list li');
+
+  allTodos.forEach(todoLi => {
+    const checkbox = todoLi.querySelector('input[type="checkbox"]');
+    const isCompleted = checkbox ? checkbox.checked : false;
+
+    if (currentFilter === "all") {
+      todoLi.style.display = "block";
+    } else if (currentFilter === "active") {
+      todoLi.style.display = isCompleted ? "none" : "block";
+    } else if (currentFilter === "completed") {
+      todoLi.style.display = isCompleted ? "block" : "none";
+    }
+  });
+}

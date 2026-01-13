@@ -205,25 +205,39 @@ FILTER BY TAG :
       <!-- Status Filter -->
       <div class="flex justify-between items-center p-3 text-sm">
         <div class="text-[#a8a29e] text-xs">
-          <span id="items-left" class="text-teal-500 font-bold">3 left </span>
+          <span id="items-left" class="text-teal-500 font-bold"></span> 
         </div>
 
-        <div class="inline-flex rounded-lg border border-[#e7e5e4] bg-white p-1 shadow-sm">
-          <button class="rounded-md bg-teal-500 px-4 py-2 text-xs font-medium text-white">
-            All
-          </button>
-          <button class="rounded-md px-3 py-2 text-xs text-[#a8a29e]">
-            Active
-          </button>
-          <button class="rounded-md px-3 py-2 text-xs text-[#a8a29e]">
-            Completed
-          </button>
-        </div>
+<div class="inline-flex rounded-lg border border-[#e7e5e4] bg-white p-1 shadow-sm">
+  <button
+    class="filter-btn rounded-md bg-teal-500 px-4 py-2 text-xs font-medium text-white"
+    data-filter="all"
+  >
+    All
+  </button>
 
-        <div id="Clear-Completed" class="text-[#a8a29e] text-xs cursor-pointer">
-          Clear completed
-        </div>
-      </div>
+  <button
+    class="filter-btn rounded-md px-4 py-2 text-xs text-[#a8a29e]"
+    data-filter="active"
+  >
+    Active
+  </button>
+
+  <button
+    class="filter-btn rounded-md px-4 py-2 text-xs text-[#a8a29e]"
+    data-filter="completed"
+  >
+    Completed
+  </button>
+</div>
+
+<div
+  id="Clear-Completed"
+  class="text-[#a8a29e] text-xs cursor-pointer hover:text-red-500"
+>
+  Clear completed
+</div>
+</div>
 
       <!-- Filter by Tag -->
       <div class="flex flex-wrap gap-3 justify-center items-center text-xs p-3 border-t border-[#e7e5e4] text-[#a8a29e]">
