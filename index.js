@@ -103,3 +103,21 @@ customBox.appendChild(checkIcon);
 
   input.value = "";
 }
+
+
+const clearCompleted = document.getElementById("Clear-Completed");
+
+clearCompleted.addEventListener("click", () => {
+
+  const allTodos = document.querySelectorAll("#todo-list li");
+
+  allTodos.forEach(todoItem => {
+    
+    const checkbox = todoItem.querySelector("input[type='checkbox']");
+
+    if (checkbox.checked) {
+    
+      todoItem.remove();
+    }
+  });
+});
