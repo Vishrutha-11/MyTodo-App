@@ -1,6 +1,8 @@
 Smart Todo Application
+
 A simple, responsive, and interactive Todo application built using vanilla JavaScript.
 This project helps users manage daily tasks efficiently with visual indicators and filters.
+
 Features
 ➕ Add new todos
 ✅ Mark todos as completed
