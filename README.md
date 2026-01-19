@@ -23,10 +23,10 @@ git clone https://github.com/Vishrutha-11/MyTodo-App.git
 
 cd MyTodo-App
 
-3.Open the Folder in VS Code
+3. Open the Folder in VS Code
 code .
 
-Run the Project
+4. Run the Project
 You can run it directly — no server needed.
 
 Right-click index.html → Open with Chrome OR
