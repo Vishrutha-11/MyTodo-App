@@ -23,20 +23,15 @@ git clone https://github.com/Vishrutha-11/MyTodo-App.git
 
 cd MyTodo-App
 
+3.Open the Folder in VS Code
+code .
 
+Run the Project
+You can run it directly — no server needed.
 
-🌐 Method B (Recommended: Live Server)
+Right-click index.html → Open with Chrome OR
 
-If you use VS Code, you can install the Live Server extension:
+In VS Code → Right-click index.html → Open with Live Server
 
-Right-click index.html
+Runs directly in the browser using HTML, Tailwind CSS, and vanilla JavaScript — no setup required.
 
-Click Open with Live Server
-Your app will open in the browser and reload automatically when you change code.
-
-🏁 That’s It!
-
-✔ No server
-✔ No npm install
-✔ No build step required
-Since this is simple HTML, CSS, and Vanilla JS, it runs directly on the browser.
